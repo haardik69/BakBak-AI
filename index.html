@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BakBak AI</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="brand">BakBak AI</h1>
+      <p class="subtitle">Text to Speech Generator</p>
+    </header>
+    <main>
+      <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+      <div class="tts-selector-container">
+        <h2 class="engine-label">Select TTS Engine</h2>
+        <div class="engine-toggle">
+          <input type="radio" name="tts_engine" id="coqui" value="coqui" checked>
+          <input type="radio" name="tts_engine" id="elevenlabs" value="elevenlabs">
+          <label for="coqui" class="toggle-label">Coqui</label>
+          <label for="elevenlabs" class="toggle-label">ElevenLabs</label>
+          <div class="toggle-ball"></div>
+        </div>
+      
+        <div id="coquiModels" class="model-dropdown">
+          <label for="coquiModelSelect">Coqui Model</label>
+          <select id="coquiModelSelect"></select>
+        </div>
+        <div id="elevenlabsModels" class="model-dropdown">
+          <label for="elevenModelSelect">ElevenLabs Voice</label>
+          <select id="elevenModelSelect"></select>
+        </div>
+      </div>      
+      <button id="generateBtn">Generate Speech</button>
+      <div class="audio-container" id="audioContainer" style="display: none;">
+        <audio id="audioPlayer" controls></audio>
+        <button id="downloadBtn" class="download-btn">Download MP3</button>
+      </div>
+    </main>
+  </div>
+  <script src="static/script.js" defer></script>
+</body>
+</html>

@@ -2,7 +2,7 @@ let models = { coqui: [], elevenlabs: [] };
 
 async function fetchModels() {
   try {
-    const res = await fetch('/models');
+    const res = await fetch('https://bakbak-ai-backend-818659842925.asia-south1.run.app/models');
     if (!res.ok) throw new Error('Could not load models');
     models = await res.json();
     updateModelOptions();
@@ -65,7 +65,7 @@ document.getElementById('generateBtn').addEventListener('click', async () => {
   btn.innerText = 'Processing...';
 
   try {
-    const res = await fetch('/generate', {
+    const res = await fetch('https://bakbak-ai-backend-818659842925.asia-south1.run.app/generate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, engine, model })

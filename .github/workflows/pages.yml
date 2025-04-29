@@ -26,7 +26,7 @@ jobs:
           path: '.' 
 
       - name: Upload artifact (explicit version)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           path: '.'
 

@@ -14,10 +14,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Clear GitHub Actions Cache
-        run: rm -rf ~/.cache
-      
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -28,6 +24,11 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: '.' 
+
+      - name: Upload artifact (explicit version)
+        uses: actions/upload-artifact@v4
+        with:
+          path: '.'
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2

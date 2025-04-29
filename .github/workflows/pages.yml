@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,11 +24,6 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: '.' 
-
-      - name: Upload artifact (explicit version)
-        uses: actions/upload-artifact@v3
-        with:
-          path: '.'
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
